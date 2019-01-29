@@ -24,7 +24,7 @@ export const login = pkgGerenciador.defProcess({
                 caption: "loginForm",
                 render() {
                     return sessao.user ? <div>{sessao.user.name}</div> :
-                        <div onClick={logar}>login google</div>
+                        <button onClick={logar}>login google</button>
                     function logar() {
                         sessao.auth.loginGoogle()
                     }

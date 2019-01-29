@@ -3,6 +3,7 @@ import {
     createSession, firebaseAuthenticator,
 } from "@hoda5/h5doc"
 import { perfilUsuario} from 'src/processos/perfilUsuario';
+import { tarefas} from 'src/processos/tarefas';
 import { login } from "../processos/login";
 import { noauth } from "../processos/noauth";
 import { noroute } from "../processos/noroute";
@@ -42,7 +43,7 @@ sessao.defMenu([
     "-",
     {
         params: {},
-        process: perfilUsuario,
+        process: tarefas,
     },
 ])
 

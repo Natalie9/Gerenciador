@@ -1,9 +1,9 @@
 
 import {
-    booleanType,
+    
     defCollectionSmall,
     defPkgDB,
-    numberType,
+    // numberType,
     stringType,
 } from "@hoda5/h5doc"
 
@@ -14,8 +14,8 @@ export const tarefa = defCollectionSmall({
             maxLen: 40,
             minLen: 3,
         }),
-        status: booleanType({
-        })
+        // status: booleanType({
+        // })
     },
 })
 
@@ -27,10 +27,10 @@ export const usuario = defCollectionSmall({
             maxLen: 40,
             minLen: 3,
         }),
-        tarefas: numberType({
-            decimals: 0,
-            min: 0,
-        })
+        // tarefas: numberType({
+        //     decimals: 0,
+        //     min: 0,
+        // })
       
     },
 })
@@ -43,22 +43,24 @@ export const pkgGerenciador = defPkgDB({
         usuario,
     },
     operations: {
-        async cadastrarTarefa(t, uid: string, nome: string) {
-            return t.tarefa.insert(uid as GUID, {
+        async cadastrarTarefa(t, nome: string) {
+            return t.tarefa.insert(nome, {
                 nome,
-                status: true,
+                
             })
         },
-        async cadastrarUsuario(t, uid: string, nome: string) {
-            return t.usuario.insert(uid as GUID, {
-                nome,
-                tarefas: 0,
-            })
-        },
+        
         async atualizarTarefa(t, uid: string, nome: string, status: boolean) {
             return t.tarefa.insert(uid as GUID, {
                 nome,
-                status,
+                
+            })
+        },
+
+        async cadastrarUsuario(t, uid: string, nome: string) {          
+                      
+            return t.usuario.insert(uid as GUID, {
+                nome,
             })
         },
         

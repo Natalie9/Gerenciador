@@ -6,7 +6,10 @@ export function usuario () {
     return usuarioLogado
 }
 
+ // tslint:disable-next-line:no-debugger
+ debugger
 auth.onAuthStateChanged((user) => {
+
     if (usuarioLogado) {
         usuarioLogado.off()
         usuarioLogado = undefined as any
@@ -14,9 +17,11 @@ auth.onAuthStateChanged((user) => {
     if (user) {
         usuarioLogado = sessao.query.gerenciador.usuario.subscribe(user.uid as GUID)
         usuarioLogado.listen((err, doc) => {
+             // tslint:disable-next-line:no-debugger
+        debugger
             if (!doc) {
                 sessao.runInTransaction((t) =>
-                    t.gerenciador.cadastrarTarefa(user.uid, user.displayName || "?"))
+                    t.gerenciador.cadastrarUsuario(user.uid, user.displayName || "?"))
             }
         })
     }

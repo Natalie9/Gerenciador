@@ -27,15 +27,16 @@ export const perfilUsuario = pkgGerenciador.defProcess({
                 render() {
                     const j = usuario()
 
-                    if (!(j && j.loaded)) {
-                        return <div>carregando</div>
-                    }
+                    // if (!(j && j.loaded)) {
+                        
+                    //     return <div>carregando</div>
+                    // }
 
                     const p = j.editables
 
                     return <Form>
                         <Entry caption="Nome" field={p.nome} />
-                        <Entry field={p.tarefas} />
+                        <Entry field={p.nome} />
                     </Form>
                 },
             }
