@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { faSign } from "@fortawesome/free-solid-svg-icons"
+import { Entry } from '@hoda5/h5doc';
 import { sessao } from 'src/model/sessao';
 import { usuario } from 'src/model/usuarioLogado';
 import { pkgGerenciador } from "../model/db"
@@ -25,6 +26,13 @@ export const welcome = pkgGerenciador.defProcess({
                 caption: "Bem vindo",
                 render() {
                     const j = usuario()
+                    // const carregou = j && j.loaded
+                    // if (!carregou) {
+                    //     return <div>carregando</div>
+                    // }
+
+                    // <Entry field={j.editables.nome} />
+
 
                     return <div>
                         <div>Bem vindo {j && j.doc ? j.doc.nome : " SEM NOME "}</div>

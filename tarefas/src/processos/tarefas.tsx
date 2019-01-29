@@ -32,7 +32,7 @@ export const tarefas = pkgGerenciador.defProcess({
                         <button onClick={cadastrarTarefa}>Cadastrar</button>
                     </div>
                     function cadastrarTarefa() {
-                        cadTarefa("opaa")
+                        cadTarefa("epaa")
                     }
                 },
          
